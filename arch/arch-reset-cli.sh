@@ -11,7 +11,7 @@ fi
 options_help="
 -h, --help : Provide help panel.
 -p, --ping : try server/github connection before doing the reset
--s : Save file that you provide.
+-s, --save : Save file that you provide.
 "
 
 while [[ $# -gt 0 ]]; do
@@ -23,7 +23,7 @@ while [[ $# -gt 0 ]]; do
           echo "$options_help"
           exit 1
           ;;
-        -s)
+        -s | --save)
           save_files=$1
           shift
           ;;
@@ -33,7 +33,12 @@ while [[ $# -gt 0 ]]; do
           plateform=${plateform:-server}
           echo "testing $plateform"
           if [ $plateform == github ]; then
-            echo "ping github.com"
+            status_code=$(curl --write-out %{http_code} --silent --output /tmp/response.txt https://github.com/nuageeee/reset-cli-linux)
+            if [[ $status_code == 200 ]]; then
+              echo "Github repo is available"
+            else 
+             echo "Github repo is not available. Check /tmp/response.txt for more information."
+            fi
           else
             ping 87.88.106.74
           fi
