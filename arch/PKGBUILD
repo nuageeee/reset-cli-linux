@@ -1,0 +1,16 @@
+pkgname=reset-cli
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="A simple bash script to reset a Linux system based on ArchLinux"
+arch=('x86_64')
+license=('GPL')
+depends=('bash')
+
+source=('arch-reset-cli.sh')
+
+sha256sums=('4497b6e7b3a6b5cd90242e9e9ffecc3a24eba89b7adaef78d737bf62f423e3d5')
+
+package() {
+    install -Dm755 "$srcdir/arch-reset-cli.sh" "$pkgdir/usr/bin/reset-cli"
+    chown "$(whoami):$(whoami)" "$pkgdir/usr/bin/reset-cli"
+}
