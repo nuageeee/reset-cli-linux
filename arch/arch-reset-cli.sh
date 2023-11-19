@@ -1,3 +1,4 @@
+#!/bin/bash
 #create by nuage with love
 
 if [ "$(id -u)" != "0" ]; then
@@ -9,25 +10,34 @@ fi
 
 options_help="
 -h, --help : Provide help panel.
--y : Accept all the risk that include of reseting linux.
--v : Show debug informations.
+-p, --ping : try server/github connection before doing the reset
 -s : Save file that you provide.
 "
 
-while [[ $# > 0 ]]; do
+while [[ $# -gt 0 ]]; do
     option="$1"
     shift
 
     case $option in
         -h | --help)
           echo "$options_help"
-          ;;
-        -v)
-          debug=1
+          exit 1
           ;;
         -s)
           save_files=$1
           shift
+          ;;
+        -p | --ping)
+          echo "Do you want to test the github or the server? (default server) : "
+          read -r plateform
+          plateform=${plateform:-server}
+          echo "testing $plateform"
+          if [ $plateform == github ]; then
+            echo "ping github.com"
+          else
+            ping 87.88.106.74
+          fi
+          exit 1
           ;;
         *)
           echo "You provide a non valide option : $option"
@@ -37,24 +47,10 @@ while [[ $# > 0 ]]; do
     esac
 done
 
-base_file=(
-    /etc/shadow
-    /etc/passwd
-)
-
 backup_files() {
     mkdir -p "/home/backup/"
-    for file in "$save_files"; do
+    for file in $save_files; do
         cp "$file" "/home/backup/${file}"
-    done
-    for file in "${base_file[@]}"; do
-        # Trouve tous les fichiers qui correspondent au chemin
-        files=$(find "$file" -type f)
-
-        # Copier les fichiers trouvés
-        for f in "${files[@]}"; do
-            cp "$f" "/home/backup/${f}.backup"
-        done
     done
 }
 
