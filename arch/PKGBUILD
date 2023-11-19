@@ -8,7 +8,7 @@ depends=('bash')
 
 source=('arch-reset-cli.sh')
 
-sha256sums=('4497b6e7b3a6b5cd90242e9e9ffecc3a24eba89b7adaef78d737bf62f423e3d5')
+sha256sums=('10cc5c1c472fb8b27a7b7a1b82978ae2c3c781d85c553e87d825575cfb3f9239')
 
 package() {
     install -Dm755 "$srcdir/arch-reset-cli.sh" "$pkgdir/usr/bin/reset-cli"
