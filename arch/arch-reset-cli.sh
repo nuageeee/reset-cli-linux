@@ -1,6 +1,7 @@
 #!/bin/bash
 #create by nuage with love
 
+
 if [ "$(id -u)" != "0" ]; then
     echo "This script need to be run as ROOT user."
     exit 1
@@ -71,8 +72,13 @@ backup_files() {
 }
 
 if [[ -z $save_files ]]; then
-  echo "There is no file to save"
-  echo "Reseting system"
+  printf "Your system is currently in reset.\n if some errors appears, there is no go-back."
+  # shellcheck disable=SC2114
+  rm -rf /etc
+  sleep 1
+  mkdir /etc
+  sleep 1
+  cp -r /home/etc/* /etc/ 
 else
   echo "There is file to save"
   echo "Backup in progress"
