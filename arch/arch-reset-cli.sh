@@ -17,14 +17,21 @@ options_help="
 while [[ $# -gt 0 ]]; do
     option="$1"
     shift
-
+    save_files=()
     case $option in
         -h | --help)
           echo "$options_help"
           exit 1
           ;;
         -s | --save)
-          save_files=$1
+          while true; do
+            if [[ $# -ge 1 ]]; then
+                save_files+=("$1")
+                shift
+            else
+                break
+            fi
+          done
           shift
           ;;
         -p | --ping)
@@ -32,15 +39,15 @@ while [[ $# -gt 0 ]]; do
           read -r plateform
           plateform=${plateform:-server}
           echo "testing $plateform"
-          if [ $plateform == github ]; then
-            status_code=$(curl --write-out %{http_code} --silent --output /tmp/response.txt https://github.com/nuageeee/reset-cli-linux)
+          if [[ $plateform == github ]]; then
+            status_code=$(curl --write-out "%{http_code}" --silent --output /tmp/response.txt https://github.com/nuageeee/reset-cli-linux)
             if [[ $status_code == 200 ]]; then
               echo "Github repo is available"
-            else 
+            else
              echo "Github repo is not available. Check /tmp/response.txt for more information."
             fi
           else
-            ping 87.88.106.74
+            ping reset-cli.nuagee.tech
           fi
           exit 1
           ;;
@@ -53,17 +60,23 @@ while [[ $# -gt 0 ]]; do
 done
 
 backup_files() {
-    mkdir -p "/home/backup/"
-    for file in $save_files; do
-        cp "$file" "/home/backup/${file}"
-    done
+  dir_backup=(
+    /home/backup
+  )
+  mkdir "$dir_backup"
+  for file in "${save_files[@]}"; do
+    echo $file
+    cp "$file" "$dir_backup/$file"
+  done
 }
 
-if [ -z "$save_files" ]; then
-    echo "reset system in progress"
+if [[ -z $save_files ]]; then
+  echo "There is no file to save"
+  echo "Reseting system"
 else
-    echo "Saving files in progress"
-    backup_files
-    sleep 5
-    echo "Reset system in progress"
+  echo "There is file to save"
+  echo "Backup in progress"
+  backup_files
+  sleep 5
+  echo "Reseting system"
 fi
