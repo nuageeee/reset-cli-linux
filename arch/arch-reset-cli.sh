@@ -1,7 +1,6 @@
 #!/bin/bash
 #create by nuage with love
 
-
 if [ "$(id -u)" != "0" ]; then
     echo "This script need to be run as ROOT user."
     exit 1
