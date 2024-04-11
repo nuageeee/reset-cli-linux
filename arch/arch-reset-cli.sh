@@ -6,6 +6,17 @@ if [ "$(id -u)" != "0" ]; then
     exit 1
 fi
 
+
+if ! command -v pacstrap > /dev/null; then
+    echo "The pacstrap command was not found. Did you want to install it?"
+    read -r response
+    if [[ $response == yes ]]; then
+        yes | pacman -S arch-install-scripts
+        echo "The pacstrap command was installated. re-enter your command."
+    fi
+    exit 1
+fi       
+
 # Define variable
 
 options_help="
