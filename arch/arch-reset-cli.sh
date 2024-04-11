@@ -1,5 +1,5 @@
 #!/bin/bash
-#create by nuage with love
+#create by nuage with love and passion
 
 if [ "$(id -u)" != "0" ]; then
     echo "This script need to be run as ROOT user."
