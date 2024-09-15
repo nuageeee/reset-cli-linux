@@ -7,11 +7,11 @@ arch=('x86_64')
 license=('GPL')
 depends=('bash')
 
-source=('arch-reset-cli.sh')
+source=('reset-cli.dart')
 
-sha256sums=('b7ea385268773ea57cbaaf1c6db57534be38978a0ce67954a5e8f9b2d3abd33e')
+sha256sums=('b9d3681ace671e4709358d48c91692890c06d34bd64ea9a89cf2a30f6ca30dbc')
 
 package() {
-    install -Dm755 "$srcdir/arch-reset-cli.sh" "$pkgdir/usr/bin/reset-cli"
+    install -Dm755 "$srcdir/reset-cli.dart" "$pkgdir/usr/bin/reset-cli"
     chown "$(whoami):$(whoami)" "$pkgdir/usr/bin/reset-cli"
 }
