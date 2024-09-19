@@ -1,3 +1,4 @@
+
 ﻿# reset-cli
 
 reset-cli is a powerfull package that allow you to reset your linux system (Archlinux only for now).
@@ -10,7 +11,6 @@ reset-cli is a powerfull package that allow you to reset your linux system (Arch
 
 - [description](#description)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
 
@@ -26,7 +26,6 @@ To make this possible, the script, once installed and run, will download your sy
 To install this script on archlinux, just follow the instruction bellow this message :
 
 ```bash
-
 # clone the repo
 git clone https://github.com/nuageeee/reset-cli-linux reset-cli
 # enter in the folder
@@ -41,30 +40,17 @@ Once it's done, you will be allow to run reset-cli with this command :
 ```bash
 sudo reset-cli -h
 ```
-
-## Usage
-here is the list of available command.
-
-```bash
-# save/backup file
-sudo reset-cli -s {yourfilepath}
-```
-That will create a folder in "/home/" named "backup" and copy the file you to save in there.
-
-```bash
-# test server response
-sudo reset-cli -p [answer the question]
-```
-That will try to ping the server that contain the based file of your linux system.\
-### I recommend to execute this command before doing anything else!
-
 ## Roadmap
 
 This is the early development version. I am currently working on :
 
 - [ ] Possibility to backup file.
-- [ ] Add more OS's. (Ubuntu/Debian, Linux mint, Kali linux/Parrot OS)
-- [ ] Possibility to check server response.
+- [ ] Add auto backup for shadow and passwd files.
+- [ ] Add more OS's.
+	- [ ] Ubuntu/Debian
+	- [ ] Kali linux/Parrot os
+	- [ ] Linux mint
+- [ ] Possibility to check server availability.
 - [ ] Possibility to reset the system to default.
 
 
@@ -77,4 +63,4 @@ Please make sure to update tests as appropriate.
 
 ## License
 
-[GPL](https://choosealicense.com/licenses/agpl-3.0/)
+The license used is [GPL](https://choosealicense.com/licenses/agpl-3.0/).
