@@ -3,6 +3,8 @@
 
 reset-cli is a powerfull package that allow you to reset your linux system (Archlinux only for now).
 
+A GUI will be release in the futur using Dart & Flutter.
+
 ![Discord](https://img.shields.io/discord/1138108139443593246?style=for-the-badge)
 ![GitHub Repo stars](https://img.shields.io/github/stars/nuageeee/reset-linux?style=for-the-badge)
 ![GitHub issues](https://img.shields.io/github/issues/nuageeee/reset-linux?style=for-the-badge)
