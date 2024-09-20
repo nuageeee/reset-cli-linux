@@ -1,7 +1,8 @@
-
-﻿# reset-cli
+# Reset-cli
 
 reset-cli is a powerfull package that allow you to reset your linux system (Archlinux only for now).
+
+A GUI will be release in the futur using Dart & Flutter.
 
 ![Discord](https://img.shields.io/discord/1138108139443593246?style=for-the-badge)
 ![GitHub Repo stars](https://img.shields.io/github/stars/nuageeee/reset-linux?style=for-the-badge)
@@ -46,6 +47,8 @@ This is the early development version. I am currently working on :
 
 - [ ] Possibility to backup file.
 - [ ] Add auto backup for shadow and passwd files.
+- [ ] Initialize V0.2.0.
+- [ ] Add first GUI in Flutter.
 - [ ] Add more OS's.
 	- [ ] Ubuntu/Debian
 	- [ ] Kali linux/Parrot os
@@ -56,8 +59,7 @@ This is the early development version. I am currently working on :
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
