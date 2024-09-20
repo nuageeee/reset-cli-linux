@@ -46,6 +46,8 @@ This is the early development version. I am currently working on :
 
 - [ ] Possibility to backup file.
 - [ ] Add auto backup for shadow and passwd files.
+- [ ] Initialize V0.2.0.
+- [ ] Add first GUI in Flutter.
 - [ ] Add more OS's.
 	- [ ] Ubuntu/Debian
 	- [ ] Kali linux/Parrot os
