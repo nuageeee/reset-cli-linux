@@ -1,5 +1,4 @@
-
-﻿# reset-cli
+# Reset-cli
 
 reset-cli is a powerfull package that allow you to reset your linux system (Archlinux only for now).
 
