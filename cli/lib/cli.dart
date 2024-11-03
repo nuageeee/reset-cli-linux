@@ -1,3 +1,5 @@
-int calculate() {
-  return 6 * 7;
+import 'package:cli/platforms/linux/linux.dart';
+
+run() {
+  linuxPlatform();
 }
