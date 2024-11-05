@@ -23,25 +23,8 @@ In the futur, a GUI made with the Flutter framework will be made to make the pro
 
 ## Installation
 
-- archlinux : 
+The documentation will be move to [Wiki Github](https://github.com/nuageeee/reset-linux/wiki).
 
-To install this script on archlinux, just follow the instruction bellow this message :
-
-```bash
-# clone the repo
-git clone https://github.com/nuageeee/reset-cli-linux reset-cli
-# enter in the folder
-cd reset-cli
-# select the arch folder
-cd arch
-# then, build the pakage
-makepkg -si
-```
-
-Once it's done, you will be allow to run reset-cli with this command :
-```bash
-sudo reset-cli -h
-```
 ## Roadmap
 
 This is the early development version. I am currently working on :
