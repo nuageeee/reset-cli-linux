@@ -1,5 +1,5 @@
-import 'package:cli/platforms/linux/linux.dart';
+import 'package:cli/platforms/platform_interface.dart';
 
 run() {
-  linuxPlatform();
+  PlatformInterface().platformChecking();
 }
