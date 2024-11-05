@@ -10,7 +10,7 @@ The package is make with Dart language. That allow me to import the code on many
 ## Table of contents
 
 - [description](#description)
-- [Installation](#installation)
+- [Documentation](#documentation)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
 
@@ -21,7 +21,7 @@ To make this possible, the script, once installed and run, will download your sy
 
 In the futur, a GUI made with the Flutter framework will be made to make the procces easier.
 
-## Installation
+## Documentation
 
 The documentation will be move to [Wiki Github](https://github.com/nuageeee/reset-linux/wiki).
 
