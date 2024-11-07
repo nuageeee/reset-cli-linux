@@ -1,9 +1,7 @@
-final class Cli {
-  Future<void> _findCommand() async {
-    print('test');
-  }
+import 'package:cli/platforms/platform_interface.dart';
 
-  Future<void> handle(List<String> args) async {
-    await _findCommand();
+final class Cli {
+  Future<void> handle() async {
+      PlatformInterface().platformChecking();
   }
 }

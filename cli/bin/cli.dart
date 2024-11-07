@@ -1,9 +1,5 @@
-import 'package:args/args.dart';
+import 'package:cli/cli.dart';
 
-void main(List<String> args) {
-  final parser = ArgParser();
-
-  parser.addFlag("test", abbr: "t");
-  var test = parser.parse(args);
-  print(test["test"]);
+void main() async {
+  await Cli().handle();
 }
