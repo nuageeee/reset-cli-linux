@@ -1,6 +1,9 @@
-import 'package:cli/functions/functions.dart';
-import 'package:cli/platforms/platform_interface.dart';
+final class Cli {
+  Future<void> _findCommand() async {
+    print('test');
+  }
 
-run() {
-  functions().handle();
+  Future<void> handle(List<String> args) async {
+    await _findCommand();
+  }
 }
