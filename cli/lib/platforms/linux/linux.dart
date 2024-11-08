@@ -4,7 +4,7 @@ import 'package:cli/functions/utils.dart';
 
 class linuxTerminal implements Utils {
   @override
-  autoCopy() {
+  void autoCopy() {
     final shadowFile = File('/etc/shadow');
     final passwdFile = File('/etc/passwd');
 
