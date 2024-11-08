@@ -10,6 +10,7 @@ class linuxTerminal implements Utils {
 
     // shadowFile.copy('/home/copy/shadow');
     // passwdFile.copy('/home/copy/passwd');
+    print(Platform.operatingSystemVersion);
     String test = Platform.operatingSystemVersion;
     if (test.contains('arch')) {
       print('arch');
