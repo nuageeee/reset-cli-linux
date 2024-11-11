@@ -1,19 +1,14 @@
 import 'dart:io';
 
-import 'package:cli/functions/utils.dart';
+import 'package:cli/components/utils.dart';
 
-class linuxTerminal implements Utils {
+class linuxTerminal {
   @override
-  void autoCopy() {
-    final shadowFile = File('/etc/shadow');
-    final passwdFile = File('/etc/passwd');
 
-    // shadowFile.copy('/home/copy/shadow');
-    // passwdFile.copy('/home/copy/passwd');
-    print(Platform.operatingSystemVersion);
-    String test = Platform.operatingSystemVersion;
-    if (test.contains('arch')) {
-      print('arch');
-    }
+  Future<void> handle() async {
+    final osFile = File('/etc/os-release');
+    osFile.readAsString().then((String cts) {
+      if (cts.contains('arch') & cts.contains('20240721')) {}
+    });
   }
 }

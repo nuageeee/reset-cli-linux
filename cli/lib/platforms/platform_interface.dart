@@ -5,12 +5,12 @@ import 'package:cli/platforms/windows/windows.dart';
 
 class PlatformInterface {
   platformChecking() {
-    print('PlatformCheking is good');
+    print('PlatformChecking is good');
     if (!Platform.isLinux) {
       windowsTerminal();
       print('Is Windows');
     }
     print('Is Linux');
-    linuxTerminal().autoCopy();
+    linuxTerminal().handle();
   }
 }
